@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MinecraftClone</RootNamespace>
+    <AssemblyName>MinecraftClone</AssemblyName>
+    <UseWindowsForms>False</UseWindowsForms>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Company>Doge Productions</Company>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.7.5" />
+    <PackageReference Include="StbImageSharp" Version="2.27.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shaders/**" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Resources/**" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="textures/**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Shaders\NewFolder\**" />
+    <EmbeddedResource Remove="Shaders\NewFolder\**" />
+    <None Remove="Shaders\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
